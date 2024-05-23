@@ -1,1 +1,0 @@
-import{_ as r}from"./DlAUqK2U.js";import{m as t,a as n,n as s,p as e,f as c,v as _}from"./assets/index-CIatnCkt.js";const p={};function f(m,u){const o=t("a-button"),a=t("a-result");return n(),s(a,{status:"404",title:"404","sub-title":"此页面未找到。"},{extra:e(()=>[c(o,{type:"primary",href:"/"},{default:e(()=>[_("首页")]),_:1})]),_:1})}const d=r(p,[["render",f]]);export{d as default};
