@@ -1,0 +1,1 @@
+export { default as MoneyComponent } from './MoneyComponent.vue';

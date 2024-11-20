@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>三狗云 | TDCloud</title>
+    <script>
+      !(function () {
+        var e = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+          t = localStorage.getItem('use-dark') || 'system'
+        ;('"dark"' === t || (e && '"light"' !== t)) &&
+          document.documentElement.classList.toggle('dark', !0)
+      })()
+    </script>
+    <style>
+      html.dark {
+        color-scheme: dark;
+      }
+    </style>
+  </head>
+  <body
+    class="w-screen overflow-x-hidden font-sans antialiased"
+  >
+    <div id="app"></div>
+    <script>
+      !(function () {
+        var currentColor = localStorage.getItem('currentColor') || '"blue"'
+        var currentRadius = localStorage.getItem('currentRadius') || '1'
+        document.body.classList.add(`theme-${currentColor.slice(1, -1)}`)
+        document.body.style.setProperty('--radius', `${currentRadius}rem`)
+      })()
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "page": {
+    "server": {
+      "title": "TD-Cloud"
+    }
+  },
+  "common": {
+    "loadingMenu": "Loading menu",
+    "contactUs": "Contact Us",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "alert": "Are you sure?",
+    "pagination": {
+      "total": "Row(s)",
+      "page": {
+        "first": "First Page",
+        "previous": "Previous Page",
+        "next": "Next Page",
+        "last": "Last Page",
+        "current": "Page",
+        "total": "Of"
+      },
+      "selected": "Selected",
+      "rows-per-page": "Rows per page",
+      "columns-options": "Columns Options"
+    }
+  },
+  "login": {
+    "text": "Login",
+    "success": "Login Success"
+  },
+  "logout": {
+    "text": "Logout"
+  },
+  "error": {
+    "code": "Error Code: ",
+    "isLogin": "Currently logged in, if you need to switch accounts, please log out of your current account first."
+  },
+  "console": {
+    "wallet_card": {
+      "title": "Account Balance",
+      "button": "Recharge",
+      "unit": "Coins"
+    },
+    "redemption_code_card": {
+      "title": "Redemption Code",
+      "button": "Convertible",
+      "placeholder": "Please enter redemption code",
+      "fotmat_error": "Please enter a valid redemption code"
+    }
+  },
+  "shopping": {
+    "discounted": {
+      "original_cost": "Original Price",
+      "sell_price": "Sale Price"
+    },
+    "confirm_buy": {
+      "title": "Confirm Buy Order ?"
+    }
+  }
+}
