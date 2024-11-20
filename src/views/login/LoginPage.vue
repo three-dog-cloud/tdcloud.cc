@@ -31,10 +31,7 @@ function handleSubmit() {
     })
     .catch((err: IErrorResponse) => {
       nAlertMessage(err.error, $t('error.code') + err.code)
-
-      if (err.code === 20104) {
-        params.value.password = ''
-      }
+      params.value.password = ''
     })
 }
 

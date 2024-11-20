@@ -163,22 +163,19 @@ const setOpen = (value: boolean) => {
         class="hidden lg:flex flex-1 items-center gap-4 justify-center absolute left-1/2 transform -translate-x-1/2"
       >
         <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem class="space-x-10">
-              <NavigationMenuLink
-                asChild
-                v-for="navRouterMap in navRouterMaps.filter((item) => item.type === 'link')"
-                :key="navRouterMap.title"
+          <NavigationMenuList class="space-x-4">
+            <NavigationMenuItem
+              v-for="navRouterMap in navRouterMaps.filter((item) => item.type === 'link')"
+              :key="navRouterMap.title"
+            >
+              <a
+                :href="navRouterMap.path"
+                target="_blank"
+                class="flex items-center gap-1 rounded-xl"
               >
-                <a
-                  :href="navRouterMap.path"
-                  target="_blank"
-                  class="flex items-center gap-1 rounded-xl"
-                >
-                  <Icon v-if="navRouterMap.icon" :icon="navRouterMap.icon" class="size-5" />
-                  <span>{{ navRouterMap.title }}</span>
-                </a>
-              </NavigationMenuLink>
+                <Icon v-if="navRouterMap.icon" :icon="navRouterMap.icon" class="size-5" />
+                <span>{{ navRouterMap.title }}</span>
+              </a>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

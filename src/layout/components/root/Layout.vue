@@ -5,9 +5,7 @@ import { RootHeader, RootFooter } from '@/layout/components/root'
 import type { IRouter } from '@/layout/components/root'
 import router from '@/router'
 import { useTokenStore } from '@/stores'
-import { computed, ref } from 'vue'
-import { useColorMode, type Position } from '@vueuse/core'
-import { reactive } from 'vue'
+import { computed } from 'vue'
 
 defineOptions({
   name: 'RootLayout'

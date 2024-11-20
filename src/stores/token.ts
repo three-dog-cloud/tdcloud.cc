@@ -19,6 +19,7 @@ export const useTokenStore = defineStore('user_tk', {
         isTokenValid(): boolean {
             return Date.now() <= this.token_timeout
         },
+
         isRefreshTokenValid(): boolean {
             return Date.now() <= this.refreshToken_timeout
         },
