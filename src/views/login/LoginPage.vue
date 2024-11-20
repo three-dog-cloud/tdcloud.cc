@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useRouter } from 'vue-router'
 import { Icon } from '@iconify/vue'
-import { nextTick, ref } from 'vue'
+import { nextTick, ref, computed } from 'vue'
 import type { IErrorResponse } from '@/api/error'
 import { useSystemStore, useTokenStore } from '@/stores'
 import { nAlertMessage, message } from '@/naive'
@@ -47,6 +47,8 @@ const thirdPartyIcons = [
   { icon: 'logos:telegram', name: 'Telegram', show: systemStore.config?.telegram }
 ]
 
+const isThirdPartyLogin = computed(() => thirdPartyIcons.some((item) => item.show))
+
 const params = ref<User.LoginParams>({
   username: '',
   password: ''
@@ -86,12 +88,14 @@ const accountLogin = (platform: string) => {
     <Card class="w-full max-w-sm">
       <CardHeader>
         <CardTitle class="text-2xl text-center"> 登录 </CardTitle>
-        <CardDescription class="text-center"> 请选择登录方式或输入您的账户信息 </CardDescription>
+        <CardDescription class="text-center" v-if="isThirdPartyLogin">
+          请选择登录方式或输入您的账户信息
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div class="grid gap-4">
           <!-- 第三方登录图标 -->
-          <div class="flex justify-center">
+          <div class="flex justify-center" v-if="isThirdPartyLogin">
             <div class="flex flex-wrap justify-center gap-2 max-w-[250px]">
               <Button
                 v-for="item in thirdPartyIcons"
@@ -112,7 +116,7 @@ const accountLogin = (platform: string) => {
             <div class="absolute inset-0 flex items-center">
               <span class="w-full border-t" />
             </div>
-            <div class="relative flex justify-center text-xs uppercase">
+            <div class="relative flex justify-center text-xs uppercase" v-if="isThirdPartyLogin">
               <span class="bg-background px-2 text-muted-foreground">或</span>
             </div>
           </div>

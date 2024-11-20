@@ -22,12 +22,16 @@ const setLoading = (value: boolean) => {
 
 const payments = ref<TopUp.Payment[]>([])
 const initPayment = () => {
+  loading.value = true
   TopUp.getPaymentList()
     .then((res) => {
       payments.value = res
     })
     .catch((err: IErrorResponse) => {
       toast.error(err.error)
+    })
+    .finally(() => {
+      loading.value = false
     })
 }
 

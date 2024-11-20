@@ -27,7 +27,7 @@ watch(
     if (!newVal) {
       setTimeout(() => {
         fetchData(1, pagination.value.pageSize)
-      }, 1000)
+      }, 500)
     }
   }
 )

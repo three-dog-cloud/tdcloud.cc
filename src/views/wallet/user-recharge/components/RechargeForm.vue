@@ -18,6 +18,7 @@ import { computed, ref, watch } from 'vue'
 import { toast } from 'vue-sonner'
 import type { IErrorResponse } from '@/api'
 import { useWalletStore } from '@/stores/personal'
+import { DOCS_CURRENCY_URL } from '@/config/docs'
 
 const props = withDefaults(
   defineProps<{
@@ -212,7 +213,11 @@ const onSubmit = from.handleSubmit((values: Record<string, number>) => {
         <div class="sm:gap-2 sm:items-center sm:flex sm:flex-wrap">
           <div class="flex items-center justify-between w-full mt-4">
             <div class="text-sm font-medium text-gray-900 dark:text-gray-100">支付方式</div>
-            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+            <a
+              :href="DOCS_CURRENCY_URL"
+              target="_blank"
+              class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+            >
               支付说明
             </a>
           </div>

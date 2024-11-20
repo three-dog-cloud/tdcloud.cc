@@ -36,6 +36,7 @@ import { toast } from 'vue-sonner'
 import useOrderAmountService from './order-amount'
 import useBuyingService from './buying'
 import { Loader2 } from 'lucide-vue-next'
+import { DOCS_CURRENCY_URL } from '@/config/docs'
 
 const { commodity } = defineProps<{
   commodity: Commodity.ICommodityResponse
@@ -246,7 +247,10 @@ const buyOpen = ref<boolean>(false)
                   "
                   @update:price="(newPrice: number) => (price = newPrice)"
                 >
-                  <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                  <a
+                    :href="DOCS_CURRENCY_URL"
+                    target="_blank"
+                    class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                     >支付说明</a
                   >
                 </PayPayment>
