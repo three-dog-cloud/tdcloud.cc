@@ -31,7 +31,9 @@ jobs:
           run_install: true
 
       - name: create .env file
-        run: echo "${{ vars.VITE_API_HOST }}" > .env
+        env:
+          VITE_API_HOST: ${{ vars.VITE_API_HOST }}
+        run: echo "VITE_API_HOST=$VITE_API_HOST" > .env
 
       - name: Build static content
         run: pnpm build

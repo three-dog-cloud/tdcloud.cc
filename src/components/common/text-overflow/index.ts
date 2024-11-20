@@ -1,1 +1,1 @@
-export { default as TextOverflow } from './TextOverflow.vue';
+export { default as TextOverflow } from './TextOverFlow.vue';

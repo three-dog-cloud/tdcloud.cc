@@ -1,3 +1,2 @@
-export { default as ResultPage } from './ResultPage.vue'
-export { default as Result } from './Page.vue'
+export { default as Result } from './Result.vue'
 export * from './types'
