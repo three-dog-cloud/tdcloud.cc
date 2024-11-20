@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { RootLayout, type IRouter } from '@/layout/components/root'
 import { useTokenStore } from '@/stores'
-import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 
 defineOptions({
   name: 'HomeLayout'
 })
 
-const tkStore = computed(() => storeToRefs(useTokenStore()))
+const tkStore = useTokenStore()
 
 const routerMaps = computed<Array<IRouter>>(() => [
   {
@@ -17,7 +16,7 @@ const routerMaps = computed<Array<IRouter>>(() => [
     icon: 'material-symbols:home-rounded',
     type: 'router-link'
   },
-  tkStore.value.isLogin
+  tkStore.isLogin
     ? {
         title: '控制台',
         path: 'DashboardPage',

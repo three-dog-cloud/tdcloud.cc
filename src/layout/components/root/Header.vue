@@ -64,11 +64,11 @@ const navRouterMaps: IRouter[] = [
   }
 ]
 
-const headerRouters = [
+const headerRouters = computed(() =>[
   routerMaps.value[0] ?? null,
   ...navRouterMaps,
   ...routerMaps.value.slice(1, routerMaps.value.length)
-]
+])
 
 const emit = defineEmits<{
   logout: [] // logout event
