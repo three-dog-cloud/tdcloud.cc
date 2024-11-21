@@ -10,7 +10,7 @@
         @click="closePage"
         variant="outline"
         :disabled="func !== 'bind'"
-        v-if="(func !== 'bind' && status !== 'error') || isShowButton"
+        v-if="status !== 'error' || isShowButton"
       >
         {{ sec + `秒后` + (func === 'bind' ? '自动关闭' : '回到主页') }}
       </Button>
