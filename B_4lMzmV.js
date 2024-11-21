@@ -1,1 +1,0 @@
-import{_ as s,c as i,u as o}from"./assets/index-BJ53DsZm.js";async function S(r){const{createPersistedState:a}=await s(async()=>{const{createPersistedState:e}=await import("./BIj0ezEv.js");return{createPersistedState:e}},[]),t=i();return t.use(a({key:e=>`td-client-${e}`,storage:localStorage})),r.use(t),await o().initServerConfig(),t}export{S as initStore};
