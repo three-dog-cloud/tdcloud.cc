@@ -182,15 +182,21 @@ watchEffect(() => {
                 </div>
               </div>
             </div>
-            <template v-if="data.pay_status == 0">
+            <template v-if="data.pay_status == 0 || data.pay_status == 4">
               <Separator class="my-2" />
               <slot name="pay-slot"></slot>
               <Separator class="my-2" />
               <DialogFooter>
-                <Button variant="outline" @click="emits('update:cancelRecord', props.row.index)">
+                <Button
+                  variant="outline"
+                  @click="emits('update:cancelRecord', props.row.index)"
+                  v-if="data.pay_status == 0"
+                >
                   取消
                 </Button>
-                <Button @click="emits('update:payRecord', props.row.index)">支付</Button>
+                <Button @click="emits('update:payRecord', props.row.index)">{{
+                  data.pay_status == 0 ? '支付' : '继续处理'
+                }}</Button>
               </DialogFooter>
             </template>
           </Loader>
