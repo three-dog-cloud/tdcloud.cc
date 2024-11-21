@@ -1,1 +1,0 @@
-import{aX as e}from"./assets/index-DPNg1h3L.js";var r;(t=>{function y(a,o){return e({url:`/pay/gateway/${a}/${o}`,method:"post"})}t.createOrderPayGateway=y;function c(a){return e({url:"/pay/callback/gateway",method:"post",data:a})}t.callbackPayGateway=c})(r||(r={}));export{r as P};
